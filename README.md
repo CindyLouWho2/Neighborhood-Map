@@ -11,4 +11,4 @@ Click on the colored markers for additional information on the site provided by 
 The app allows you to filter the list down as you type. In return, it displays the locations on the map.
 
 ## Acknowledgments
-Thank you to all of the wonderful students with great questions in the forum. I would of been totally lost without that.   
+I would like to thank Alfonso Crisci who had a great post on the forums on his experience with this project. It was really helpful and it pushed me in the right direction. 
