@@ -1,56 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>NewestNeighborhood Map</title>
-  <link rel="stylesheet" href="css/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>NewestNeighborhood Map</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="css/style.css" rel="stylesheet">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
 <body>
-  <div class="container">
+ <nav class="navbar navbar-default nav-bar col-sm-3 col-md-3">
+	<div class="container-fluid">
+			<h1>San Francisco</h1>
+			<hr>
+			<div>
+				<span class="filter-label">Search Top Places to Visit</span> -- <input class="text-input-box" data-bind="textInput: query, valueUpdate: 'keydown'" id="filter-text-box" placeholder="Ex: Fishermans Wharf" type="text"> // <!--http://knockoutjs.com/documentation/binding-syntax.html-->
+			</div>
+			<hr>
+			<h3>Popular Places to Visit</h3>
+			<div data-bind="foreach: filteredPlacesList">
+				<ul data-bind="text: name, click: openInfoWindow"></ul>
+			</div>
+		</div>
+  </nav>
+	<div class="map" id="map"></div>
+	<script src='js/lib/knockout-3.4.2.js'>
+	</script> // attached the .js files
+	<script src='js/lib/jquery-3.2.1.min.js'>
+	</script>
+	<script src='js/appcry.js'>
+	</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-    <aside class="sidebar" id="nav">
-      <h1>San Francisco</h1>
-      <hr>
-      <div>
-        <span class="filter-label">Search Top Places to Visit </span>
-        <!--  <input class="text-input-box" data-bind="textInput: filter, valueUpdate: 'keydown'" id="filter-text-box" placeholder="Ex: Fishermans Wharf" type="text">  -->
-
-        --  <input class="text-input-box" data-bind="textInput: query, valueUpdate: 'keydown'" id="filter-text-box" placeholder="Ex: Fishermans Wharf" type="text">
-
-      </div>
-      <hr>
-      <h3>Popular Places to Visit</h3>
-  <!--   <div data-bind="foreach: filteredPlacesList" id="top-places">
-        <input data-bind="value: query, valueUpdate: 'afterkeydown'">
-          <a data-bind="text: name, click: openInfoWindow"></a>
-        <ul data-bind="click: $root.showInfo" id="places-list">
-
-          <li class="place-name" data-bind="text: title"></li>
-        </ul>
-      </div>
-    </aside>
-
-
-
-   <div id="vertical-menu" class="vertical-menu">
-        <form>
-        <input data-bind="value: query, valueUpdate: 'afterkeydown'">
-      </form>  -->
-      <div data-bind="foreach: filteredPlacesList">
-        <ul data-bind="text: name, click: openInfoWindow">
-        </ul>
-      </div>
-    </div>
-    <div class="map" id="map"></div>
-  </div>
-  <script src='js/lib/knockout-3.4.2.js'></script>
-  <script src='js/lib/jquery-3.2.1.min.js'></script>
-  <script src='js/appcry.js'></script>
-  <script async defer onerror = "mapError()"
-      src=
-      "https://maps.googleapis.com/maps/api/js?&key=AIzaSyCM_LWjmnKVpUEeBsCMhHzAbPmyLqfoMtI&v=3&callback=map">
-  </script>
+	<script async defer onerror="mapError()" src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCM_LWjmnKVpUEeBsCMhHzAbPmyLqfoMtI&v=3&callback=map">
+	    //my API key for google maps
+	</script>
 </body>
 </html>
